@@ -4,14 +4,14 @@ import {
   getAdmin,
   isAuthenticated,
   getNewClient,
-  getNewCarer
+  getNewCarer,
 } from "../../../pages/api/adminApi";
 import { useRouter } from "next/router";
 
 const bl = () => {
   const router = useRouter();
 
-  const [admin, setAdmin] = useState({});
+  const [admin, setAdmin] = useState();
   const [clients, setClients] = useState([]);
   const [carer, setCarer] = useState([]);
   const adminId = router.query.id;
@@ -21,30 +21,27 @@ const bl = () => {
     getAdmin(adminId, isAuthenticated().token)
       .then((data) => {
         setAdmin(data);
-        console.log(data);
       })
       .catch((error) => {
         console.log("Error", error);
       });
 
-
-      getNewClient(adminId, isAuthenticated().token)
+    getNewClient(adminId, isAuthenticated().token)
       .then((data) => {
         setClients(data);
       })
       .catch((error) => {
         console.log("error", error);
       });
-      
-      getNewCarer(adminId, isAuthenticated().token)
+
+    getNewCarer(adminId, isAuthenticated().token)
       .then((data) => {
         setCarer(data);
       })
       .catch((error) => {
         console.log("error", error);
       });
-
-
+    console.log(admin);
   }, []);
 
   const update_Price = (data) => {
@@ -77,7 +74,7 @@ const bl = () => {
     priceCounter,
     update_Price,
     clients,
-    carer
+    carer,
   };
 };
 export default bl;

@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 import {isAuth} from '../../context/index'
 
 const bl = () => {
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("Password1");
+  const [email, setEmail] = useState("demo-account@admin.com");
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const [redirectToReferer, setRedirectToReferer] = useState(false);

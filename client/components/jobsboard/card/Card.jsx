@@ -79,7 +79,7 @@ const Card = () => {
                 onClick={handleClick}
               >
                 <a className={classes.btnLink} href="/jobsboard/[jobid]">
-                  First Aid Courses
+                  Links
                 </a>
               </Button>
             </li>
@@ -91,7 +91,7 @@ const Card = () => {
                 onClick={handleClick}
               >
                 <a className={classes.btnLink} href="/jobsboard/[jobid]">
-                  First Aid Courses
+                Links
                 </a>
               </Button>
             </li>
@@ -103,7 +103,7 @@ const Card = () => {
                 onClick={handleClick}
               >
                 <a className={classes.btnLink} href="/jobsboard/[jobid]">
-                  First Aid Courses
+                Links
                 </a>
               </Button>
             </li>
@@ -115,7 +115,7 @@ const Card = () => {
                 onClick={handleClick}
               >
                 <a className={classes.btnLink} href="/jobsboard/[jobid]">
-                  First Aid Courses
+                Links
                 </a>
               </Button>
             </li>
@@ -126,14 +126,14 @@ const Card = () => {
         <Grid item sm={3} md={3} lg={3} xl={3} className={classes.sideBar}>
           <img
             className={classes.ad}
-            src={"/images/carer.jpeg"}
+            src={"/images/ad400px600px.svg"}
             alt="ad"
             width="100%"
             height="auto"
           />
           <img
             className={classes.ad1}
-            src={"/images/carer.jpeg"}
+            src={"/images/ad400px600px.svg"}
             alt="ad"
             width="100%"
             height="auto"

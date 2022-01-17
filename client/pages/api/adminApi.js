@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-
 export const signin = (user) => {
   return fetch(`${process.env.NEXT_PUBLIC_REACT_APP_API_URL}/signin`, {
     method: "POST",
@@ -258,37 +256,3 @@ export const getAdmin = (token) => {
     .catch((err) => console.log(err));
 };
 
-// export const getFuel = () => {
-//   const token = "Basic SHdzWTM4WDRqQkJ4R0EydFpybDJEVGJQYWFYRVZwTXA6cjc4cjBiSndRQUJCejB2Rw=="
-
-//   return fetch(
-//     "https://api.onegov.nsw.gov.au/FuelPriceCheck/v1/fuel/prices/location",
-//     {
-//       method: "POST",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//         apikey: "HwsY38X4jBBxGA2tZrl2DTbPaaXEVpMp",
-//         Authorization: `Basic ${token}`,
-//         transactionid: "01",
-//         requesttimestamp: new Date(),
-//       },
-
-//       // body: JSON.stringify({
-//       //   fueltype: "P95",
-//       //   brand: ["Caltex", "Shell", "BP"],
-//       //   namedlocation: "2065",
-//       //   referencepoint: {
-//       //     latitude: "-33.4362551",
-//       //     longitude: "151.2966549",
-//       //   },
-//       //   sortby: "Price",
-//       //   sortascending: "true",
-//       // }),
-//     }
-//   )
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .catch((err) => console.log(err));
-// };

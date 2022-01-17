@@ -56,18 +56,7 @@ function MyEditor() {
        }
      }
 
-   
-  const {
-    body,
-    handlePost,
-    success,
-    title,
-    setTitle,
-    setBody,
-    setTags,
-    tags,
-  } = bl();
-
+  
 
   const EDITOR_JS_TOOLS = {
     table: Table,

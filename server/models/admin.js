@@ -26,12 +26,6 @@ const adminSchema = new mongoose.Schema({
         contentType: String,
     },
 
-    body: {
-        type: String,
-        trim: true,
-    },
-
-
     price: {
         type: Number,
     },

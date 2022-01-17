@@ -42,14 +42,14 @@ exports.signInAdmin = (req, res) => {
   Admin.findOne({ email }, (err, user) => {
     if (err || !user) {
       return res.status(401).json({
-        error: "Katrina, that's not the correct email.",
+        error: "Can't find you",
       });
     }
 
     //admin schema method
     if (!user.authenticate(password)) {
       return res.status(401).json({
-        error: "Katrina, Your email and password do not match",
+        error: "Your email and password do not match",
       });
     }
 
@@ -80,7 +80,7 @@ exports.signInAdmin = (req, res) => {
 // sign out
 exports.signout = (req, res) => {
   res.clearCookie("LIA");
-  return res.json({ message: "Cya, Katrina" });
+  return res.json({ message: "Cya" });
 };
 
 // protect routes for signed in users using jsonWebToken
@@ -93,7 +93,7 @@ exports.requireSignin = expressJwt({
 
 exports.adminById = (req, res, next, id) => {
   Admin.findById(id)
-    .select("role")
+    .select("role price")
 
     .exec((err, user) => {
       if (err || !user) {
@@ -184,16 +184,15 @@ exports.contactForm = async (req, res, next) => {
 
   const emailData = {
     from: "diveboatemployment@gmail.com",
-    // to: "katjenner09@gmail.com",
-    to: "katjenner09@gmail.com",
-    subject: "New enquiry from Live In Angels",
-    text: `Hi Katrina, you have received an enquiry from ${name}, 
+    to: "brendanlittle42@gmail.com",
+    subject: "New enquiry from business",
+    text: `Hi User, you have received an enquiry from ${name}, 
     ${message}.
     Phone number: ${phone}
     Email: ${email}
     They prefer to be contacted via ${preference} `,
 
-    html: `<p>Hi Katrina, <br/> You have received an enquiry from ${name}, <br/> 
+    html: `<p>Hi User, <br/> You have received an enquiry from ${name}, <br/> 
     ${message}.<br/>
     Phone number: ${phone}<br/>
     Email: ${email}<br/>
@@ -883,10 +882,11 @@ exports.price = (req, res) => {
 
 exports.readAdmin = (req, res) => {
   const admin = req.query.Id;
-  Admin.findById(admin).exec((err, admin) => {
+  Admin.findById({_id: admin}).exec((err, admin) => {
     if (err) {
       return res.status(400).json("Opps something went wrong");
     } else {
+   
       return res.status(200).json(admin);
     }
   });

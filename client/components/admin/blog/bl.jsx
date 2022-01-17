@@ -1,4 +1,4 @@
-import { useState, useContext, useRef, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { newBlog } from "../../../pages/api/adminApi";
 import { isAuth } from "../../../context/index";
 import { s3File, s3BatchDelete } from "../../../pages/api/helperApi";

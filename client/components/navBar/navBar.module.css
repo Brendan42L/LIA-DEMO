@@ -2,23 +2,26 @@
   color: var(--yellow);
 }
 
-.navbarlogo {
+.logo {
   cursor: pointer;
+  margin-left: 1em;
+  object-fit: contain;
+  margin-bottom: 0.4em;
 }
 
 .NavBarItems {
   background-color: var(--lightGreen);
-  height: 230px;
+  height: 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4em;
+  font-size: 1.5em;
   letter-spacing: 1px;
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 100;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .modalLogout {
@@ -108,8 +111,6 @@
     transition: all 0.5s ease;
   }
 
-
-  
   .NavBarItemsActive:after {
     content: "";
     display: block;
@@ -117,8 +118,7 @@
     height: 200vh;
     width: 200vw;
     background-color: rgb(37, 37, 37);
-
-}
+  }
   .navMenu.active {
     padding: 0;
     background-color: rgba(12, 12, 12);

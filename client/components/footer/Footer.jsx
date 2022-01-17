@@ -7,32 +7,23 @@ export const Footer = () => {
   return (
     <>
       <footer className={styles.footer}>
-        <div className={styles.footerCont}>
-          <div className={styles.footerLogoSocial}>
-            <img
-              className={styles.logo}
-              src="/images/lotus.png"
-              alt="logo"
-              width="250"
-              height="auto"
-            />
-
-            <hr className={styles.line} />
-            <ul className={styles.socialLogos}>
-              <li>
-                <FacebookIcon fontSize="large" className={styles.facebook} />
-              </li>
-              <li>
-                <InstagramIcon className={styles.insta} fontSize="large" />
-              </li>
-            </ul>
-          </div>
+        
 
          
             
          
           <nav className={styles.footerMenu}>
-            <ul>
+          <img
+              className={styles.logo}
+              src="/images/ad200px400px.svg"
+              alt="logo"
+              width="auto"
+              height="300"
+            />
+            <ul >
+              <li>
+             
+              </li>
               <li>
                 <a href="/jobsboard">Jobs Board</a>
               </li>
@@ -47,9 +38,9 @@ export const Footer = () => {
               </li>
             </ul>
           </nav>
-        </div>
+      
         <div className={styles.copyRightCenter}>
-          <small>&copy; 2021, Live in angels. All Rights Reserved</small>
+          <small>&copy; 2021, Your Website. All Rights Reserved</small>
         </div>
         <ul className={styles.copyRightArea}>
           <li>

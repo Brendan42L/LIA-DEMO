@@ -1,5 +1,6 @@
 .logo {
-  object-fit: cover;
+  object-fit: contain;
+  margin-top: 200px;
 }
 
 .footer {
@@ -10,46 +11,28 @@
 .footer li {
   list-style-type: none;
   color: var(--yellow);
+  margin: 1em;
 }
 .footer a {
   text-decoration: none;
   color: var(--off-white);
 }
 
-.footerCont {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
 
 
 
 .footerMenu {
-  display: flex;
-
-}
-
-.footerMenu ul {
-  text-align: center;
-  margin: 0 0 2em 0;
+  
+  margin: 0 0 0em 0;
   padding: 0;
   display: flex;
+ justify-content: space-around;
+ align-items: center;
+  height: 200px;
 }
 
-.line {
-  margin-top: 2.3em;
-  border: none;
-  height: 0.5px;
-  color: rgb(231, 231, 231); 
-  background-color: rgb(231, 231, 231); 
-}
 
-.footerMenu ul li {
-  font-weight: 300;
-  margin: 1em;
-  line-height: 2;
-}
+
 
 .fBlog {
   margin: 1em;
@@ -80,22 +63,8 @@
   justify-content: center;
 }
 
-.socialLogos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0;
-  padding: 0;
- 
-}
 
-.content {
-  font-size: 0.8em;
-  font-weight: 200;
-  word-wrap: break-word;
-  width: 220px;
-}
+
 
 .facebook {
   color: #4267b2;

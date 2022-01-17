@@ -34,7 +34,7 @@ exports.newClient = async (req, res) => {
         return res.status(403).json({ error: "Email is taken!" });
       } else {
         return Counters.findOneAndUpdate(
-          { _id: "61864fdee664efff8a6e6356" },
+          { _id: "61bef528db72318bcf1b3ae5" },
           { $inc: { clientCounter: 1 } },
           { new: true }
         ).then((count) => {
@@ -59,14 +59,14 @@ exports.newClient = async (req, res) => {
           const emailData = {
             from: "diveboatemployment@gmail.com",
             to: req.body.guardianemail,
-            subject: "Welcome to Live In Angels",
+            subject: "Welcome to Business",
             text: `
 Hello, ${req.body.guardianfName} ${req.body.guardianlName},
-Thank you for your interest in becoming a client of Live In Angels.
-Please use the following link to complete our registration form: ${process.env.CLIENT_URL}/api/clients/form/?token=${token.activeToken}`,
+Thank you for your interest in becoming a client of Business.
+Please use the following link to complete our registration form: ${process.env.SERVER_URL}/clients/form/?token=${token.activeToken}`,
             html: `<p>Hello, ${req.body.guardianfName} ${req.body.guardianlName} <br/>
-Thank you for your interest in becoming a client of " Live In Angels"</br>
- Please use the following link to complete our registration form:</p><a href=${process.env.CLIENT_URL}/api/clients/form/?token=${token.activeToken}&_id=${id}>Click Here</a>`,
+Thank you for your interest in becoming a client of " Business"</br>
+ Please use the following link to complete our registration form:</p><a href=${process.env.SERVER_URL}/clients/form/?token=${token.activeToken}&_id=${id}>Click Here</a>`,
           };
           _.extend(client, token).save();
           sendEmail(emailData)

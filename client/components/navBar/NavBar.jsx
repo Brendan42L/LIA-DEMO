@@ -30,7 +30,6 @@ const useStyles = makeStyles({
   },
 });
 
-
 const Navbar = () => {
   const router = useRouter();
   const classes = useStyles();
@@ -39,15 +38,12 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [menuStatus, setMenu] = useState(false);
 
-
   useEffect(() => {
-    if(!isAuthenticated()){
-      signout()
-      setAuth(isAuthenticated())
-     }
+    if (!isAuthenticated()) {
+      signout();
+      setAuth(isAuthenticated());
+    }
   }, [isAuthenticated()]);
-  
-
 
   const body = (
     <div className={styles.modalLogout}>
@@ -85,11 +81,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={
-      menuStatus ? cx(styles.NavBarItems, styles.NavBarItemsActive) : cx(styles.NavBarItems)
-    }>
-
-      
+    <nav
+      className={
+        menuStatus
+          ? cx(styles.NavBarItems, styles.NavBarItemsActive)
+          : cx(styles.NavBarItems)
+      }
+    >
       <Modal
         className={classes.modal}
         open={open}
@@ -98,21 +96,18 @@ const Navbar = () => {
         {body}
       </Modal>
       <Link href="/">
+        <img
+          className={styles.logo}
+          src="/images/lotus.png"
+          alt="logo"
+          width="auto"
+          height="120"
+        />
+      </Link>
 
-      <img
-       className={styles.navbarlogo}
-        src={"/images/lotus.png"}
-        alt="logo"
-        width="150"
-        height="auto"
-      />
-    
-      </Link> 
-      
       <div className={styles.menuicon} onClick={handleClick}>
         <i className={menuStatus ? "fa fa-times" : "fa fa-bars"}></i>
       </div>
-      <h1 className={styles.titleLogo}>Live In Angels</h1>
 
       <ul
         className={
@@ -127,12 +122,7 @@ const Navbar = () => {
               : styles.navLinks
           }
         >
-          <Link 
-          
-
-          href="/jobsboard">Jobs Board
-          
-          </Link>
+          <Link href="/jobsboard">Jobs Board</Link>
         </li>
 
         <li
@@ -164,12 +154,7 @@ const Navbar = () => {
           <Link href="/contactus">Contact</Link>
         </li>
 
-      
-
-
         <>
-      
-
           {auth ? (
             <li
               onClick={handleClick}
@@ -179,13 +164,15 @@ const Navbar = () => {
                   : styles.navLinks
               }
             >
-              {isAuthenticated() ? <Link href={`/admin/${isAuthenticated().user._id}`}>Admin</Link> : null}
+              {isAuthenticated() ? (
+                <Link href={`/admin/${isAuthenticated().user._id}`}>Admin</Link>
+              ) : null}
             </li>
           ) : null}
 
           {auth ? (
             <li className={styles.navLinks} onClick={() => setOpen(true)}>
-            Log Out
+              Log Out
             </li>
           ) : null}
         </>

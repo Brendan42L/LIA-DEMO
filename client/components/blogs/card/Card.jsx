@@ -76,24 +76,17 @@ const Card = () => {
         </p>
       </Grid>
 
-      <Grid container spacing={5}>
-        <Grid item md={2} lg={3} xl={3} className={classes.sideBar}>
+      <Grid container spacing={1}>
+        <Grid item md={2} lg={4} xl={3} className={classes.sideBar}>
           <img
             className={classes.ad}
-            src={"/images/carer.jpeg"}
+            src={"/images/ad300px200px.svg"}
             alt="ad"
             width="100%"
             height="auto"
           />
         </Grid>
-        <Grid
-          sm={12}
-          md={10}
-          lg={9}
-          xl={9}
-          item
-          className={classes.postWrapper}
-        >
+        <Grid sm={12} md={8} item className={classes.postWrapper}>
           {posts !== "Sorry no posts" ? (
             posts.map((post, i) => (
               <Link href="/blogs/[blogid]" as={`/blogs/${post._id}`}>

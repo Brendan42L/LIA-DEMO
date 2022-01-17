@@ -84,7 +84,7 @@ exports.apply = (req, res) => {
       } else {
     
         return Counters.findOneAndUpdate(
-          { _id: "61864fdee664efff8a6e6356" },
+          { _id: "61bef528db72318bcf1b3ae5" },
           { $inc: { count: 1 } },
           { new: true }
         ).then((count) => {
@@ -98,7 +98,7 @@ exports.apply = (req, res) => {
           let carer = new Carers(newUser);
           const token = {
             activeToken: jwt.sign(
-              { _id: carer._id, iss: "liveinangels" },
+              { _id: carer._id, iss: "business" },
               process.env.JWT_SECRET
             ),
           };
@@ -107,14 +107,14 @@ exports.apply = (req, res) => {
           const emailData = {
             from: "diveboatemployment@gmail.com",
             to: req.body.email,
-            subject: "Welcome to Live In Angels",
+            subject: "Welcome to Business",
             text: `
         Hello, ${req.body.fName} ${req.body.lName},
-        Thank you for your interest in working with Live In Angels.
-        Please use the following link to complete our application form: ${process.env.CLIENT_URL}/api/form/?token=${token.activeToken}`,
+        Thank you for your interest in working with  Business
+        Please use the following link to complete our application form: ${process.env.SERVER_URL}/form/?token=${token.activeToken}`,
             html: `<p>Hello, ${req.body.fName} ${req.body.lName} <br/>
-        Thank you for your interest in working with " Live In Angels"</br>
-         Please use the following link to complete our application form:</p><a href=${process.env.CLIENT_URL}/api/form/?token=${token.activeToken}&_id=${id}>Click Here</a>`,
+        Thank you for your interest in working with " Business"</br>
+         Please use the following link to complete our application form:</p><a href=${process.env.SERVER_URL}/form/?token=${token.activeToken}&_id=${id}>Click Here</a>`,
           };
           _.extend(carer, token).save();
           sendEmail(emailData)
@@ -134,7 +134,6 @@ exports.apply = (req, res) => {
 exports.form = (req, res, next) => {
   const id = req.query._id;
   const token = req.query.token;
-
   Carers.findById(id)
     .select("activeToken")
     .exec((err, carer) => {

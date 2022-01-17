@@ -50,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "left",
   },
   tickCross: {
-    marginLeft: "5px"
-  }
+    marginLeft: "5px",
+  },
 }));
 
 const Dash = () => {
@@ -127,6 +127,33 @@ const Dash = () => {
                 )}
               </a>
             </li>
+            <li>
+              <a
+                className={classes.listItem}
+                href={` ${
+                  process.env.NEXT_PUBLIC_REACT_APP_URL
+                }/client/${"61bf0b167bdbb5b417b6f7b4"}`}
+              >
+                Claudia Janus 1 day(s) ago
+                {!client.form ? (
+                  <img
+                    className={classes.tickCross}
+                    src={"/images/cross.png"}
+                    alt="icon"
+                    width="19"
+                    height="19"
+                  />
+                ) : (
+                  <img
+                    className={classes.tickCross}
+                    src={"/images/tick.png"}
+                    alt="icon"
+                    width="24"
+                    height="24"
+                  />
+                )}
+              </a>
+            </li>
           </ul>
         ))}
       </Paper>
@@ -141,6 +168,33 @@ const Dash = () => {
               >
                 {carer.fName} {carer.lName}{" "}
                 {moment().diff(carer.created, "days")} day(s) ago
+                {!carer.form ? (
+                  <img
+                    className={classes.tickCross}
+                    src={"/images/cross.png"}
+                    alt="icon"
+                    width="19"
+                    height="19"
+                  />
+                ) : (
+                  <img
+                    className={classes.tickCross}
+                    src={"/images/tick.png"}
+                    alt="icon"
+                    width="24"
+                    height="24"
+                  />
+                )}
+              </a>
+            </li>
+            <li>
+              <a
+                className={classes.listItem}
+                href={` ${
+                  process.env.NEXT_PUBLIC_REACT_APP_URL
+                }/carer/${"61bf01017bdbb5b417b6f71c"}`}
+              >
+                John Smith 3 day(s) ago
                 {!carer.form ? (
                   <img
                     className={classes.tickCross}

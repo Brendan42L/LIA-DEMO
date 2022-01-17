@@ -49,12 +49,8 @@ const ProfileBar = ({ id, jwt }) => {
   const [adminId, setAdminId, refAdminId] = useState("");
   const classes = useStyles();
   const {
-    handleNewJob,
-    selected,
     handleCarers,
-    handleClients,
     handleDash,
-    handleBlog,
   } = bl();
   const [anchorEl, setAnchorEl] = useState(null);
   const router = useRouter();
@@ -77,16 +73,17 @@ const ProfileBar = ({ id, jwt }) => {
         xl={2}
       >
         <div className={styles.overlay}>
+         
           <img
             className={styles.profilePic}
-            height="150"
-            width="150"
-            src={"/images/profile.jpeg"}
+            height="auto"
+            width="180px"
+            src={"/images/profile.png"}
             onError={(i) => (i.target.src = "/images/profile.jpeg")}
             id="raised-button-file"
             alt={"katrina Profile"}
           />
-          <p className={styles.name}>Hello, Kat</p>
+          <p className={styles.name}>Hello, User</p>
           <Button
             startIcon={<EqualizerIcon fontSize="large" />}
             className={classes.btns}

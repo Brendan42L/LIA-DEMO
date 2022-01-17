@@ -1,6 +1,6 @@
 .overlay {
   background-image: url(/images/hero.jpeg);
-  height: 90vh;
+  height: 80%;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -9,7 +9,7 @@
 }
 
 .icons {
-  height: 90px;
+  height: 70px;
   width: auto;
 
 }
@@ -176,15 +176,13 @@
   left:75%;
   width: 25%;
   transform: translate(-50%, -50%);
-  font-size: 6.5em;
+  font-size: 6em;
   font-weight: 200;
   letter-spacing: 2px;
   color: #FFF;
   margin: 0;
   opacity: 0.8;
   text-align: right;
-
-
   font-family: "Montserrat", sans-serif;
 }
 
@@ -193,12 +191,23 @@
     margin: 2em 0 0 0;
     padding: 1em;
   }
+ 
+}
+
+@media (max-width: 959px) {
+
+  .slogan {
+    display: none;
+  }
 }
 
 @media (min-width: 700px) {
   .fourBox {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  
+  
 }
 
 @media (max-width: 600px) {
@@ -209,6 +218,7 @@
   .overlay {
     height: 70vh;
   }
+  
 }
 
 @media (min-width: 1680px) {

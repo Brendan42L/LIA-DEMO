@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   background: {
     backgroundColor: "rgba(0, 0, 0, 0.466)",
     width: "100%",
-    height: "100%",
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
     gridTemplateRows: "repeat(2, 1fr)",
@@ -227,10 +226,10 @@ const Home = () => {
           className={classes.whyChooseUsCheckboxes}
         >
           <ul className={styles.tickBoxes}>
-            <li>Why do we use it? It is a long</li>
-            <li>Why do we use it? It is a long</li>
-            <li>Why do we use it? It is a long</li>
-            <li>Why do we use it? It is a long</li>
+            <li>Lorem Ipsum is that it has more</li>
+            <li>Lorem Ipsum is that it has more</li>
+            <li>Lorem Ipsum is that it has more</li>
+            <li>Lorem Ipsum is that it has more</li>
           </ul>
         </Grid>
         <Grid item xs={12} md={4}>

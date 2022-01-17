@@ -4,7 +4,7 @@
   cursor: pointer;
   padding: 1.5em;
   width: 100%;
-  margin: 0.1em auto;
+  margin: 1.5em auto;
   max-height: auto;
   border-radius: 0 10px 0 10px;
   border-left: 3px solid var(--darkGreen);
@@ -62,7 +62,5 @@
     width: 90%;
     margin: 0 auto;
   }
-  .card {
-    margin: 0.5em auto;
-  }
+ 
 }
